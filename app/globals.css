@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+ * Vibefolio — Apple-inspired dark theme.
+ * Tailwind v4 @theme block defines all design tokens as CSS variables.
+ * This single source of truth powers both utility classes and runtime overrides
+ * for the post-MVP Theme Engine.
+ */
+@theme {
+  /* Apple-inspired palette: layered near-black with subtle blue tint */
+  --color-bg-0: #000000;
+  --color-bg-1: #0b0b0f;
+  --color-bg-2: #14141a;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+
+  --color-text-primary: #f5f5f7;
+  --color-text-secondary: #a1a1a6;
+  --color-text-tertiary: #6e6e73;
+
+  --color-accent: #2997ff; /* Apple "link blue" */
+  --color-accent-soft: rgba(41, 151, 255, 0.14);
+
+  /* San Francisco-inspired type ramp */
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    sans-serif;
+  --font-display:
+    "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --shadow-glow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 20px 60px -20px rgba(41, 151, 255, 0.35);
+}
+
+/* Base reset */
+html,
+body {
+  background: var(--color-bg-0);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom: subtle Apple-style radial vignette behind hero */
+.hero-bg {
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      rgba(41, 151, 255, 0.18),
+      transparent 60%
+    ),
+    var(--color-bg-0);
+}
+
+/* Custom: hairline divider that matches Apple product page rhythm */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border-strong),
+    transparent
+  );
+}
+
+/* Custom: scroll-snap project rail on mobile */
+.snap-rail {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.snap-rail::-webkit-scrollbar {
+  display: none;
+}
+.snap-rail > * {
+  scroll-snap-align: start;
+}
+
+/* Respect users who prefer reduced motion: kill all custom CSS-driven motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
