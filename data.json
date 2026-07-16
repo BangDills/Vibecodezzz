@@ -1,0 +1,38 @@
+{
+  "name": "Bima Pratama",
+  "tagline": "Crafting calm interfaces, one component at a time.",
+  "bio": "Solo indie developer building micro-SaaS in the quiet hours. I like motion, type, and the kind of details you only notice on the third visit.",
+  "theme": "apple-dark",
+  "projects": [
+    {
+      "title": "Lumen Notes",
+      "description": "A Markdown-first writing app with AI outline suggestions and offline-first sync.",
+      "url": "https://lumen.example.com",
+      "tags": ["Next.js", "IndexedDB", "TypeScript"]
+    },
+    {
+      "title": "Drift",
+      "description": "A 1MB Pomodoro timer that lives in your menu bar. No account. No telemetry.",
+      "url": "https://drift.example.com",
+      "tags": ["Tauri", "Rust", "Solid.js"]
+    },
+    {
+      "title": "Prompt Atlas",
+      "description": "An open library of reproducible LLM prompts with side-by-side eval results.",
+      "url": "https://prompts.example.com",
+      "tags": ["React", "Supabase", "Postgres"]
+    },
+    {
+      "title": "Otto",
+      "description": "A tiny CLI that watches your git diffs and writes conventional commits for you.",
+      "url": "https://otto.example.com",
+      "tags": ["Go", "Cobra", "Bubbletea"]
+    }
+  ],
+  "socials": [
+    { "kind": "github", "url": "https://github.com/bimapratama", "label": "GitHub" },
+    { "kind": "x", "url": "https://x.com/bimapratama", "label": "X" },
+    { "kind": "linkedin", "url": "https://linkedin.com/in/bimapratama", "label": "LinkedIn" },
+    { "kind": "email", "url": "mailto:hi@bima.dev", "label": "Email" }
+  ]
+}
