@@ -1,5 +1,5 @@
 {
-  "name": "BangDillz",
+  "name": "Pinokioarab",
   "tagline": "Crafting calm interfaces, one component at a time.",
   "bio": "Solo indie developer building micro-SaaS in the quiet hours. I like motion, type, and the kind of details you only notice on the third visit.",
   "theme": "apple-dark",
@@ -30,9 +30,9 @@
     }
   ],
   "socials": [
-    { "kind": "github", "url": "https://github.com/BangDills", "label": "GitHub" },
-    { "kind": "x", "url": "https://x.com/bangdillz", "label": "X" },
-    { "kind": "linkedin", "url": "https://linkedin.com/in/bangdillz", "label": "LinkedIn" },
-    { "kind": "email", "url": "mailto:hi@bangdillz.dev", "label": "Email" }
+    { "kind": "github", "url": "https://github.com/Pinokioarab", "label": "GitHub" },
+    { "kind": "x", "url": "https://x.com/pinokioarab", "label": "X" },
+    { "kind": "linkedin", "url": "https://linkedin.com/in/pinokioarab", "label": "LinkedIn" },
+    { "kind": "email", "url": "mailto:hi@pinokioarab.dev", "label": "Email" }
   ]
 }
