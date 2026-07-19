@@ -37,8 +37,8 @@ export function Socials({ socials }: { socials: Social[] }) {
             <motion.a
               key={s.url}
               href={s.url}
-              target="_blank"
-              rel="noreferrer noopener"
+              target={s.kind === "email" ? undefined : "_blank"}
+              rel={s.kind === "email" ? undefined : "noreferrer noopener"}
               className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-primary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
               initial={reduceMotion ? false : { opacity: 0, y: 8 }}
               whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
