@@ -6,6 +6,11 @@ import { motion, useReducedMotion } from "motion/react";
  * Hero with split-letter staggered reveal (Motion 12+ API).
  * - `splitText` is the primitive for per-character orchestration.
  * - Honors `prefers-reduced-motion` via useReducedMotion + whileInView.
+ *
+ * FOUC note: Motion writes opacity:0 inline during SSR. A global CSS safety net
+ * in globals.css (html:not(.js-ready)) forces that content visible until JS
+ * hydrates and adds the `js-ready` class, so the hero is never blank on first
+ * paint. Once hydrated, Motion runs the staggered reveal as intended.
  */
 
 interface HeroProps {

@@ -22,13 +22,15 @@
   --color-accent: #2997ff; /* Apple "link blue" */
   --color-accent-soft: rgba(41, 151, 255, 0.14);
 
-  /* San Francisco-inspired type ramp */
+  /* Type ramp: --font-inter is injected by next/font (Inter, self-hosted).
+   * The variable font stack falls back to system fonts if the variable is
+   * somehow absent, so text is always legible even before/without JS. */
   --font-sans:
-    "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
-    sans-serif;
+    var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
   --font-display:
-    "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
-    sans-serif;
+    var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Segoe UI", sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -81,6 +83,18 @@ body {
 }
 .snap-rail > * {
   scroll-snap-align: start;
+}
+
+/* FOUC safety net: Motion writes `opacity:0` (and blur/translate) inline during
+ * SSR so enter animations have a start state. Until JS hydrates, that content
+ * would be invisible. The `js-ready` class is added by an inline <head> script
+ * that only runs once JS executes — so before hydration, the rule below forces
+ * Motion-hidden elements visible. Once `js-ready` lands, the override drops and
+ * Motion animates normally. Covers Hero, Projects, and Socials at once. */
+html:not(.js-ready) [style*="opacity:0"] {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
 }
 
 /* Respect users who prefer reduced motion: kill all custom CSS-driven motion. */
