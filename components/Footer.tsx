@@ -7,7 +7,7 @@ export function Footer({ name }: { name: string }) {
         <span>
           Built with{" "}
           <a
-            href="https://github.com/BangDills/vibefolio"
+            href="https://github.com/Pinokioarab/vibefolio"
             className="text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text-primary)]"
           >
             Vibefolio

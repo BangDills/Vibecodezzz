@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "A calm, Apple-inspired portfolio for indie makers and vibe-coders.",
   // Matches the GitHub Pages URL; metadataBase resolves relative OG/Twitter URLs.
-  metadataBase: new URL("https://bangdills.github.io/Vibecodezzz"),
+  metadataBase: new URL("https://pinokioarab.github.io/Vibecodezzz"),
   openGraph: {
     title: "Vibefolio",
     description:
