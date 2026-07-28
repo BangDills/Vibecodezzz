@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibefolio — Pinokioarab</title>
+  <meta name="description" content="Portofolio minimal Pinokioarab — Frontend Developer." />
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Motion library v11.18.2 -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.18.2/dist/motion.js"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Zod 4 untuk validasi config -->
+  <script src="https://cdn.jsdelivr.net/npm/zod@4.0.0/dist/zod.min.js"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 antialiased">
+
+  <!-- ============ HERO ============ -->
+  <header id="hero" class="min-h-screen flex flex-col items-center justify-center px-6 text-center" data-animate>
+    <!-- Avatar -->
+    <div class="mb-6">
+      <img id="avatar" src="assets/images/placeholder-avatar.svg" alt="Profile"
+           class="w-28 h-28 rounded-full object-cover ring-2 ring-zinc-800 shadow-xl" />
+    </div>
+
+    <!-- Nama & Role -->
+    <h1 id="name" class="text-4xl md:text-5xl font-bold tracking-tight">Pinokioarab</h1>
+    <p id="role" class="mt-2 text-lg md:text-xl text-zinc-400 font-medium">Frontend Developer</p>
+
+    <!-- Bio -->
+    <p id="bio" class="mt-4 max-w-lg text-zinc-500 leading-relaxed">Membangun produk digital yang cepat, bersih, dan estetik.</p>
+
+    <!-- Social Links -->
+    <div id="social-links" class="mt-6 flex gap-4">
+      <!-- diisi JS -->
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 animate-bounce">
+      <svg class="w-6 h-6 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="px-6 pb-24 max-w-6xl mx-auto">
+    <h2 class="section-title" data-animate>Projects</h2>
+    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      <!-- diisi JS -->
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-zinc-800 py-8 text-center text-sm text-zinc-600">
+    <p>
+      © <span id="footer-year">2026</span>
+      <a id="footer-email" href="mailto:hi@pinokioarab.dev" class="text-zinc-400 hover:text-zinc-200 transition-colors">hi@pinokioarab.dev</a>
+    </p>
+    <p class="mt-1">Dibangun dengan ♡</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,105 +1,139 @@
-# Vibefolio
+# Vibefolio — Landing Page Portofolio Minimalis
 
-An Apple-inspired, static-first portfolio for indie makers and **vibe-coders**.
-Edit one `data.json` file → get a fast, accessible, beautifully animated personal site.
+Landing page portofolio satu halaman dengan tema gelap, animasi scroll ringan, dan kustomisasi via JSON.
 
-> Zero backend. Zero CMS. Just vibes.
+**[Lihat Demo](https://bangdills.github.io/Vibecodezzz)**
 
-## Features (MVP)
+---
 
-- **Split-letter hero reveal** powered by [Motion](https://motion.dev) (the rebrand of Framer Motion).
-- **Scroll-triggered sections** with `whileInView` for lazy, off-screen optimization.
-- **`prefers-reduced-motion`** respected automatically.
-- **Config-driven content** validated by **Zod 4** at build time.
-- **Tailwind CSS v4** with a CSS-first `@theme` design-token layer.
-- **Next.js App Router** static-exported (`output: "export"`) — deploys as plain HTML/CSS/JS.
+## Fitur
 
-## Stack
+- **Hero Section** — Nama, foto profil, bio, dan tautan sosial media
+- **Gallery Project Grid** — Responsif 1/2/3 kolom, dengan tag, deskripsi, dan tautan
+- **Dark Mode** — Tema gelap default ala Apple
+- **Animasi Scroll** — Fade-in + slide-up menggunakan [Motion](https://motion.dev/) v11.18.2
+- **Validasi Konfigurasi** — Pengecekan struktur data saat runtime
+- **Fully Responsive** — Dari layar 320px hingga 1920px
 
-| Layer | Choice |
-| --- | --- |
-| Framework | Next.js 16 (App Router, static export) |
-| UI | React 19 |
-| Animation | Motion 12 (`motion/react`) |
-| Styling | Tailwind CSS v4 |
-| Validation | Zod 4 |
-| Hosting | Vercel (or any static host) |
+---
 
-## Quick start
+## Cara Pakai (5 Langkah)
+
+### 1. Fork atau Clone Repo
 
 ```bash
-npm install
-npm run validate        # validates data.json through Zod
-npm run dev             # http://localhost:3000
-npm run build           # generates ./out for static deploy
+git clone https://github.com/BangDills/Vibecodezzz.git
+cd Vibecodezzz
 ```
 
-## Customise your portfolio
+### 2. Edit `config.json`
 
-1. Edit `data.json` — change your `name`, `tagline`, `bio`, `projects[]`, and `socials[]`.
-2. Run `npm run validate` to catch schema errors before building.
-3. Run `npm run build` to produce the static bundle in `./out/`.
-4. Drag the `out/` folder into any static host (Vercel, Netlify, Cloudflare Pages, GitHub Pages).
+Buka file `config.json` dan ubah data sesuai profil kamu:
 
-### `data.json` shape
+| Field | Contoh | Keterangan |
+|-------|--------|------------|
+| `profile.name` | `"Pinokioarab"` | Nama lengkap |
+| `profile.role` | `"Frontend Developer"` | Posisi/keahlian |
+| `profile.bio` | `"Membangun produk digital..."` | Bio singkat (1 kalimat) |
+| `profile.email` | `"hi@pinokioarab.dev"` | Email kontak |
+| `profile.avatar` | `"assets/images/foto.jpg"` | Path ke foto profil |
+| `profile.social` | `{...}` | URL sosial media |
+| `projects` | `[...]` | Array project portofolio |
 
-```jsonc
+> **Tips Gambar**: Kompres dulu pakai [Squoosh](https://squoosh.app/) atau [TinyPNG](https://tinypng.com/). Ukuran maksimal 200KB per gambar.
+
+### 3. Ganti Gambar
+
+Taruh foto profil dan gambar project di folder `assets/images/`.
+
+Format yang didukung: `.jpg`, `.jpeg`, `.png`, `.webp`
+
+### 4. Commit & Push
+
+```bash
+git add .
+git commit -m "feat: kustomisasi portofolio"
+git push origin main
+```
+
+### 5. Aktifkan GitHub Pages
+
+1. Buka repo kamu di GitHub → **Settings** → **Pages**
+2. Pilih **Source**: `Deploy from a branch`
+3. Pilih **Branch**: `main` → folder `/ (root)`
+4. Klik **Save**
+5. Tunggu 1-2 menit, portofolio kamu live di:
+   `https://<username>.github.io/<repo-name>`
+
+---
+
+## Struktur Project
+
+```
+vibefolio/
+├── index.html          # Halaman utama
+├── config.json           # Data portofolio (yang perlu kamu edit)
+├── style.css            # Kustom styling
+├── script.js            # Logic render + animasi
+├── assets/
+│   └── images/
+│       ├── placeholder-avatar.svg
+│       └── placeholder-project.svg
+└── README.md            # Panduan ini
+```
+
+## Tech Stack
+
+| Komponen | Teknologi |
+|----------|-----------|
+| Struktur | HTML5 semantik |
+| Styling | Tailwind CSS v4 (CDN) |
+| Animasi | Motion v11.18.2 |
+| Validasi | Zod 4 |
+| Font | Inter (Google Fonts) |
+| Hosting | GitHub Pages |
+
+---
+
+## Kustomisasi Lanjutan
+
+### Mengubah Warna
+
+Buka `style.css` — semua kelas Tailwind bisa ditimpa. Tema gelap default ada di class `bg-zinc-950` di `<body>`.
+
+### Menambah/Mengurangi Project
+
+Edit array `projects` di `config.json`. Format:
+
+```json
 {
-  "name": "Your name",
-  "tagline": "One-line signature",
-  "bio": "A short paragraph.",
-  "theme": "apple-dark",
-  "projects": [
-    {
-      "title": "Project",
-      "description": "Up to 280 chars.",
-      "url": "https://...",
-      "tags": ["Next.js", "TypeScript"]
-    }
-  ],
-  "socials": [
-    { "kind": "github", "url": "https://github.com/you", "label": "GitHub" }
-  ]
+  "title": "Nama Project",
+  "description": "Deskripsi singkat",
+  "image": "assets/images/project.jpg",
+  "tags": ["React", "Node.js"],
+  "links": {
+    "live": "https://...",
+    "github": "https://..."
+  }
 }
 ```
 
-Validation lives in `lib/schema.ts` — extend `PortfolioSchema` to add new fields.
+> `links.live` bersifat opsional. Jika tidak ada, tombol Live Demo tidak akan muncul.
 
-## Project structure
+---
 
-```
-.
-├── app/
-│   ├── globals.css         # Tailwind v4 + @theme tokens
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   ├── Hero.tsx            # Split-letter reveal + scroll fade
-│   ├── Projects.tsx        # Snap rail (mobile) / 2-col grid (desktop)
-│   ├── Socials.tsx         # Pill buttons with scale + ring hover
-│   └── Footer.tsx
-├── lib/
-│   ├── schema.ts           # Zod 4 schema for data.json
-│   └── load-data.ts        # Validated import boundary
-├── scripts/
-│   └── validate-data.ts    # CLI: `npm run validate`
-├── data.json               # Your content (validated)
-└── next.config.ts          # `output: "export"` for SSG
-```
+## Performa
 
-## Deployment to Vercel
+- **FCP**: < 1,5 detik
+- **Bundle**: < 200 KB (gzip)
+- **Lighthouse**: Target ≥ 92
 
-1. Push this repo to GitHub.
-2. Import the repo into Vercel (no env vars needed).
-3. Build command: `npm run build` · Output directory: `out`.
+---
 
-## Roadmap (post-MVP)
+## Lisensi
 
-- Multi-template theme engine (Apple Light / Midnight / Sunset / Bento).
-- In-browser CMS (Supabase) with multi-user slugs.
-- OG image generator endpoint.
-- GitHub integration to auto-pull latest repos.
+MIT — Bebas pakai, modifikasi, dan distribusi.
 
-## License
+---
 
-MIT — go build your vibe.
+Dibangun dengan ♡ oleh [Pinokioarab](https://github.com/BangDills)

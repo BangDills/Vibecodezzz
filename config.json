@@ -1,0 +1,71 @@
+{
+  "profile": {
+    "name": "Pinokioarab",
+    "role": "Frontend Developer",
+    "bio": "Membangun produk digital yang cepat, bersih, dan estetik.",
+    "avatar": "assets/images/placeholder-avatar.svg",
+    "email": "hi@pinokioarab.dev",
+    "social": {
+      "github": "https://github.com/BangDills",
+      "linkedin": "https://linkedin.com/in/pinokioarab",
+      "x": "https://x.com/pinokioarab"
+    }
+  },
+  "projects": [
+    {
+      "title": "FutsalKita",
+      "description": "Platform booking lapangan futsal dengan pembayaran digital.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["Next.js", "Tailwind", "Supabase"],
+      "links": {
+        "live": "https://bangdills.github.io/Vibecodezzz",
+        "github": "https://github.com/BangDills/Vibecodezzz"
+      }
+    },
+    {
+      "title": "Celiuz-Vault",
+      "description": "Aplikasi manajemen vault digital dengan enkripsi end-to-end.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["TypeScript", "Zod", "React"],
+      "links": {
+        "github": "https://github.com/BangDills/Celiuz-Vault"
+      }
+    },
+    {
+      "title": "Social Notif",
+      "description": "Sistem notifikasi real-time untuk sosial media terintegrasi.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["Node.js", "WebSocket", "Redis"],
+      "links": {
+        "github": "https://github.com/BangDills/social-notif"
+      }
+    },
+    {
+      "title": "Affiliate Content Lab",
+      "description": "Tool otomatisasi konten afiliasi berbasis AI.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["Python", "OpenAI", "Next.js"],
+      "links": {
+        "github": "https://github.com/BangDills/affiliate-content-lab"
+      }
+    },
+    {
+      "title": "Prompt Extractor",
+      "description": "Ekstrak dan kelola prompt AI dengan rapi.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["Chrome Extension", "React", "TypeScript"],
+      "links": {
+        "github": "https://github.com/BangDills/prompt-extractor"
+      }
+    },
+    {
+      "title": "Celiuz Bootstrap",
+      "description": "Starter kit cepat untuk proyek TypeScript modern.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["TypeScript", "CLI", "Template"],
+      "links": {
+        "github": "https://github.com/BangDills/celiuz-bootstrap"
+      }
+    }
+  ]
+}
