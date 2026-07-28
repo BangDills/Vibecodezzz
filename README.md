@@ -1,105 +1,121 @@
-# Vibefolio
+# Vibefolio ✦
 
-An Apple-inspired, static-first portfolio for indie makers and **vibe-coders**.
-Edit one `data.json` file → get a fast, accessible, beautifully animated personal site.
+Landing page portofolio minimalis. Cepat dibuka, mudah dikustomisasi, gratis di-
 
-> Zero backend. Zero CMS. Just vibes.
+> **Cukup 5 menit — edit `config.json`, push ke GitHub, dan portofolio-mu langsung live.**
 
-## Features (MVP)
+## Fitur
 
-- **Split-letter hero reveal** powered by [Motion](https://motion.dev) (the rebrand of Framer Motion).
-- **Scroll-triggered sections** with `whileInView` for lazy, off-screen optimization.
-- **`prefers-reduced-motion`** respected automatically.
-- **Config-driven content** validated by **Zod 4** at build time.
-- **Tailwind CSS v4** with a CSS-first `@theme` design-token layer.
-- **Next.js App Router** static-exported (`output: "export"`) — deploys as plain HTML/CSS/JS.
+- **Single-page** — Semua konten dalam satu halaman, loading secepat kilat.
+- **Config-driven** — Cukup edit `config.json`, tidak perlu menyentuh HTML/CSS/JS.
+- **Dark theme** — Tema gelap Apple-inspired, nyaman di mata.
+- **Animasi scroll ringan** — Efek fade-in + slide-up saat scroll menggunakan [Motion](https://motion.dev).
+- **Responsive** — Menyesuaikan dari layar HP (320px) hingga desktop (1920px).
+- **Tailwind CSS v4** — Utility-first CSS framework untuk styling cepat dan bersih.
+- **Font Inter** — Font modern yang terbaca di semua ukuran layar.
 
-## Stack
+## Cara Deploy (5 Langkah)
 
-| Layer | Choice |
-| --- | --- |
-| Framework | Next.js 16 (App Router, static export) |
-| UI | React 19 |
-| Animation | Motion 12 (`motion/react`) |
-| Styling | Tailwind CSS v4 |
-| Validation | Zod 4 |
-| Hosting | Vercel (or any static host) |
-
-## Quick start
-
+### 1. Clone repo
 ```bash
-npm install
-npm run validate        # validates data.json through Zod
-npm run dev             # http://localhost:3000
-npm run build           # generates ./out for static deploy
+git clone https://github.com/BangDills/Vibecodezzz.git
+cd Vibecodezzz
 ```
 
-## Customise your portfolio
+### 2. Edit `config.json`
 
-1. Edit `data.json` — change your `name`, `tagline`, `bio`, `projects[]`, and `socials[]`.
-2. Run `npm run validate` to catch schema errors before building.
-3. Run `npm run build` to produce the static bundle in `./out/`.
-4. Drag the `out/` folder into any static host (Vercel, Netlify, Cloudflare Pages, GitHub Pages).
+Buka file `config.json` dan isi dengan data kamu:
 
-### `data.json` shape
-
-```jsonc
+```json
 {
-  "name": "Your name",
-  "tagline": "One-line signature",
-  "bio": "A short paragraph.",
-  "theme": "apple-dark",
+  "profile": {
+    "name": "Nama Kamu",
+    "role": "Frontend Developer",
+    "bio": "Tulis bio singkat tentang dirimu.",
+    "avatar": "assets/images/foto-kamu.jpg",
+    "email": "email@kamu.com",
+    "social": {
+      "github": "https://github.com/username",
+      "linkedin": "https://linkedin.com/in/username",
+      "x": "https://x.com/username"
+    }
+  },
   "projects": [
     {
-      "title": "Project",
-      "description": "Up to 280 chars.",
-      "url": "https://...",
-      "tags": ["Next.js", "TypeScript"]
+      "title": "Nama Project",
+      "description": "Deskripsi singkat project.",
+      "image": "assets/images/thumbnail-project.jpg",
+      "tags": ["Next.js", "Tailwind"],
+      "links": {
+        "live": "https://example.com",
+        "github": "https://github.com/username/repo"
+      }
     }
-  ],
-  "socials": [
-    { "kind": "github", "url": "https://github.com/you", "label": "GitHub" }
   ]
 }
 ```
 
-Validation lives in `lib/schema.ts` — extend `PortfolioSchema` to add new fields.
+### 3. Ganti gambar
+Masukkan foto profil dan thumbnail project ke folder `assets/images/`:
 
-## Project structure
+| File | Deskripsi | Ukuran Rekomendasi |
+|------|-----------|-------------------|
+| `assets/images/foto-profil.jpg` | Foto profil (bulat) | 200×200 px, max 100 KB |
+| `assets/images/project-*.jpg` | Thumbnail project | 600×400 px, max 200 KB |
 
-```
-.
-├── app/
-│   ├── globals.css         # Tailwind v4 + @theme tokens
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   ├── Hero.tsx            # Split-letter reveal + scroll fade
-│   ├── Projects.tsx        # Snap rail (mobile) / 2-col grid (desktop)
-│   ├── Socials.tsx         # Pill buttons with scale + ring hover
-│   └── Footer.tsx
-├── lib/
-│   ├── schema.ts           # Zod 4 schema for data.json
-│   └── load-data.ts        # Validated import boundary
-├── scripts/
-│   └── validate-data.ts    # CLI: `npm run validate`
-├── data.json               # Your content (validated)
-└── next.config.ts          # `output: "export"` for SSG
+> **Tips kompresi gambar:** Gunakan [Squoosh](https://squoosh.app) atau [TinyPNG](https://tinypng.com) sebelum push.
+
+### 4. Commit & push
+```bash
+git add .
+git commit -m "feat: kustomisasi portofolio"
+git push origin main
 ```
 
-## Deployment to Vercel
+### 5. Aktifkan GitHub Pages
+1. Buka repo di GitHub → **Settings** → **Pages**.
+2. Pilih **Source**: `Deploy from a branch`.
+3. Pilih **Branch**: `main`, folder: `/ (root)`.
+4. Klik **Save**.
+5. Tunggu 1-2 menit, portofolio-mu live di:
+   `https://bangdills.github.io/Vibecodezzz`
 
-1. Push this repo to GitHub.
-2. Import the repo into Vercel (no env vars needed).
-3. Build command: `npm run build` · Output directory: `out`.
+## Struktur Folder
 
-## Roadmap (post-MVP)
+```
+Vibecodezzz/
+├── index.html          ← Halaman utama (jangan diedit langsung)
+├── config.json         ← Data portofolio (edit di sini)
+├── style.css           ← Kustom styling
+├── script.js           ← Logika render & animasi
+├── README.md           ← Panduan ini
+└── assets/
+    └── images/         ← Foto profil & thumbnail project
+```
 
-- Multi-template theme engine (Apple Light / Midnight / Sunset / Bento).
-- In-browser CMS (Supabase) with multi-user slugs.
-- OG image generator endpoint.
-- GitHub integration to auto-pull latest repos.
+## Validasi Data
 
-## License
+Saat halaman dimuat, Vibefolio otomatis memvalidasi `config.json`. Jika ada field yang salah atau kurang, error akan muncul di layar dan di konsol browser.
 
-MIT — go build your vibe.
+**Field wajib di `config.json`:**
+- `profile.name` — Nama kamu
+- `profile.email` — Alamat email
+- `projects[].title` — Judul project
+- `projects[].description` — Deskripsi project
+- `projects[].image` — Path gambar project
+
+## Catatan Teknis
+
+- **Tidak ada database** — Semua data statis dari `config.json`.
+- **Tidak ada backend** — Murni frontend, hosting di GitHub Pages.
+- **Bundle size** — < 200 KB total (termasuk CSS, JS, font).
+- **Motion** — CDN `motion@11.18.2` untuk animasi scroll.
+- **Privasi** — Tidak ada tracking, cookie, atau penyimpanan data pengunjung.
+
+## Lisensi
+
+MIT — Bebas digunakan, dimodifikasi, dan disebarluaskan.
+
+---
+
+_Dibuat dengan ✦ oleh [Pinokioarab](https://github.com/BangDills)_

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vibefolio — Landing page portofolio minimalis. Cepat, bersih, dan estetik." />
+  <meta name="theme-color" content="#000000" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:;" />
+
+  <!-- Preconnect untuk resource eksternal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Konfigurasi Tailwind untuk tema gelap
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Vibefolio</title>
+</head>
+<body class="dark">
+
+  <!-- App root: semua konten di-render oleh JavaScript -->
+  <div id="app">
+    <div class="loading-state">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Memuat portofolio...</p>
+    </div>
+  </div>
+
+  <!-- Script utama (module) -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "profile": {
+    "name": "Pinokioarab",
+    "role": "Frontend Developer",
+    "bio": "Membangun produk digital yang cepat, bersih, dan estetik. Spesialis di ekosistem JavaScript, Tailwind CSS, dan desain ala Apple.",
+    "avatar": "assets/images/placeholder-avatar.svg",
+    "email": "hi@pinokioarab.dev",
+    "social": {
+      "github": "https://github.com/BangDills",
+      "linkedin": "https://linkedin.com/in/pinokioarab",
+      "x": "https://x.com/pinokioarab"
+    }
+  },
+  "projects": [
+    {
+      "title": "FutsalKita",
+      "description": "Platform booking lapangan futsal dengan pembayaran digital. Dibangun dengan arsitektur modern full-stack.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["Next.js", "Tailwind", "Supabase"],
+      "links": {
+        "live": "https://bangdills.github.io/Vibecodezzz",
+        "github": "https://github.com/BangDills/Vibecodezzz"
+      }
+    },
+    {
+      "title": "Celiuz-Vault",
+      "description": "Aplikasi manajemen vault digital dengan enkripsi end-to-end dan validasi skema menggunakan Zod.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["TypeScript", "Zod", "React"],
+      "links": {
+        "github": "https://github.com/BangDills/Celiuz-Vault"
+      }
+    },
+    {
+      "title": "Social Notif",
+      "description": "Sistem notifikasi terpusat untuk berbagai platform media sosial dengan interval polling yang cerdas.",
+      "image": "assets/images/placeholder-project.svg",
+      "tags": ["Node.js", "WebSocket", "Redis"],
+      "links": {
+        "github": "https://github.com/BangDills/social-notif"
+      }
+    }
+  ]
+}
