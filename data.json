@@ -1,36 +1,48 @@
 {
   "name": "Pinokioarab",
-  "tagline": "Crafting calm interfaces, one component at a time.",
-  "bio": "Solo indie developer building micro-SaaS in the quiet hours. I like motion, type, and the kind of details you only notice on the third visit.",
+  "tagline": "Membangun produk digital yang cepat, bersih, dan estetik.",
+  "bio": "Frontend Developer yang fokus pada performa, estetika ala Apple, dan pengalaman pengguna yang mulus. Membangun produk digital dengan TypeScript, Next.js, dan cinta pada detail.",
   "theme": "apple-dark",
   "projects": [
     {
-      "title": "Lumen Notes",
-      "description": "A Markdown-first writing app with AI outline suggestions and offline-first sync.",
-      "url": "https://lumen.example.com",
-      "tags": ["Next.js", "IndexedDB", "TypeScript"]
+      "title": "FutsalKita",
+      "description": "Platform booking lapangan futsal dengan pembayaran digital. Fitur pemesanan real-time, integrasi payment gateway, dan manajemen venue.",
+      "url": "https://bangdills.github.io/Vibecodezzz",
+      "tags": ["Next.js", "Tailwind", "Supabase"]
     },
     {
-      "title": "Drift",
-      "description": "A 1MB Pomodoro timer that lives in your menu bar. No account. No telemetry.",
-      "url": "https://drift.example.com",
-      "tags": ["Tauri", "Rust", "Solid.js"]
+      "title": "Celiuz-Vault",
+      "description": "Aplikasi manajemen vault digital dengan enkripsi end-to-end. Penyimpanan aman untuk token, API key, dan secrets.",
+      "url": "https://github.com/BangDills/Celiuz-Vault",
+      "tags": ["TypeScript", "Zod", "React"]
     },
     {
-      "title": "Prompt Atlas",
-      "description": "An open library of reproducible LLM prompts with side-by-side eval results.",
-      "url": "https://prompts.example.com",
-      "tags": ["React", "Supabase", "Postgres"]
+      "title": "Social Notif",
+      "description": "Sistem notifikasi real-time untuk sosial media terintegrasi. Aggregator notifikasi dari berbagai platform dalam satu dashboard.",
+      "url": "https://github.com/BangDills/social-notif",
+      "tags": ["Node.js", "WebSocket", "Redis"]
     },
     {
-      "title": "Otto",
-      "description": "A tiny CLI that watches your git diffs and writes conventional commits for you.",
-      "url": "https://otto.example.com",
-      "tags": ["Go", "Cobra", "Bubbletea"]
+      "title": "Affiliate Content Lab",
+      "description": "Tool otomatisasi konten afiliasi berbasis AI. Generate artikel, review, dan perbandingan produk secara massal.",
+      "url": "https://github.com/BangDills/affiliate-content-lab",
+      "tags": ["Python", "OpenAI", "Next.js"]
+    },
+    {
+      "title": "Prompt Extractor",
+      "description": "Ekstrak dan kelola prompt AI dengan rapi. Chrome extension untuk menyimpan, mengkategorikan, dan mencari prompt favorit.",
+      "url": "https://github.com/BangDills/prompt-extractor",
+      "tags": ["Chrome Extension", "React", "TypeScript"]
+    },
+    {
+      "title": "Celiuz Bootstrap",
+      "description": "Starter kit cepat untuk proyek TypeScript modern. Konfigurasi zero-boilerplate dengan Zod, Motion, dan Tailwind siap pakai.",
+      "url": "https://github.com/BangDills/celiuz-bootstrap",
+      "tags": ["TypeScript", "CLI", "Template"]
     }
   ],
   "socials": [
-    { "kind": "github", "url": "https://github.com/Pinokioarab", "label": "GitHub" },
+    { "kind": "github", "url": "https://github.com/BangDills", "label": "GitHub" },
     { "kind": "x", "url": "https://x.com/pinokioarab", "label": "X" },
     { "kind": "linkedin", "url": "https://linkedin.com/in/pinokioarab", "label": "LinkedIn" },
     { "kind": "email", "url": "mailto:hi@pinokioarab.dev", "label": "Email" }
