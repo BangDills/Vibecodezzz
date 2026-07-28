@@ -20,7 +20,7 @@ const els = {
 };
 
 /* ============================================
-   Validation (lightweight — Zod will be added post-MVP)
+   Validation (lightweight)
    ============================================ */
 function validateConfig(data) {
   const errors = [];
@@ -90,7 +90,7 @@ function renderHero(profile) {
   return `
     <section id="hero" class="hero">
       <div class="container" style="display:flex;flex-direction:column;align-items:center;">
-        <img src="${profile.avatar}" alt="${profile.name}" class="hero-avatar" data-animate="hero" onerror="this.src='${CONFIG_PATH}'" />
+        <img src="${profile.avatar}" alt="${profile.name}" class="hero-avatar" data-animate="hero" onerror="this.style.display='none'" />
         <h1 class="hero-name" data-animate="hero">${profile.name}</h1>
         <p class="hero-role" data-animate="hero">${profile.role || ''}</p>
         <p class="hero-bio" data-animate="hero">${profile.bio || ''}</p>
