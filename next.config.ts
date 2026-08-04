@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 // Static-first export: builds the site into ./out, deployable as pure static files.
 // Combined with Zod-validated data.json at build time, this keeps us zero-backend for MVP.
 const isGithubPages = process.env.GITHUB_PAGES === "true";
-const repo = "Vibecodezzz";
+const repo = "celiuzvibes";
 
 const nextConfig: NextConfig = {
   output: "export",

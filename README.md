@@ -18,8 +18,8 @@ Landing page portofolio minimalis. Cepat dibuka, mudah dikustomisasi, gratis di-
 
 ### 1. Clone repo
 ```bash
-git clone https://github.com/BangDills/Vibecodezzz.git
-cd Vibecodezzz
+git clone https://github.com/BangDills/celiuzvibes.git
+cd celiuzvibes
 ```
 
 ### 2. Edit `config.json`
@@ -78,12 +78,12 @@ git push origin main
 3. Pilih **Branch**: `main`, folder: `/ (root)`.
 4. Klik **Save**.
 5. Tunggu 1-2 menit, portofolio-mu live di:
-   `https://bangdills.github.io/Vibecodezzz`
+   `https://bangdills.github.io/celiuzvibes`
 
 ## Struktur Folder
 
 ```
-Vibecodezzz/
+celiuzvibes/
 ├── index.html          ← Halaman utama (jangan diedit langsung)
 ├── config.json         ← Data portofolio (edit di sini)
 ├── style.css           ← Kustom styling
